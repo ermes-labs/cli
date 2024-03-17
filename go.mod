@@ -1,8 +1,10 @@
-module github.com/ermes-labs/ermes-cli
+module github.com/ermes-labs/cli
 
-go 1.21.4
+go 1.22.0
 
 require github.com/spf13/cobra v1.8.0
+
+require github.com/alecthomas/participle/v2 v2.1.1 // indirect
 
 require (
 	github.com/inconshreveable/mousetrap v1.1.0 // indirect
