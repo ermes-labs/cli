@@ -3,7 +3,7 @@ package main
 import (
 	"log"
 
-	"github.com/ermes-labs/ermes-cli/cmd"
+	"github.com/ermes-labs/cli/cmd"
 )
 
 func main() {
