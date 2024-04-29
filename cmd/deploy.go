@@ -14,9 +14,12 @@ var DeployCmd = &cobra.Command{
 	Use:   "deploy <function name> <path to infrastructure file>",
 	Short: "Deploy a function to specified infrastructure.",
 	Long:  "Deploy a function to specified infrastructure.",
-	Args:  cobra.ExactArgs(2), // Expecting exactly 2 arguments
+	Example: `  ermes-cli deploy my-function my-infra.json
+	ermes-cli deploy my-function my-infra.json --deploy-in "#Milan"
+	ermes-cli deploy my-function my-infra.json --ermes-cli "--gateway http://localhost:8080"`,
+	Args: cobra.ExactArgs(2), // Expecting exactly 2 arguments
 	Run: func(cmd *cobra.Command, args []string) {
-		// TODO: Implementation of the deploy command
+		// Log the deployment.
 		log.Println("Deploying function", args[0], "to infrastructure", args[1])
 
 		// Get the function name and infrastructure file name.
@@ -68,4 +71,6 @@ var DeployCmd = &cobra.Command{
 func init() {
 	DeployCmd.Flags().String("deploy-in", "", "area type identifier for deployment")
 	DeployCmd.Flags().StringArray("faas-cli", []string{}, "faas-cli deploy compatible parameters")
+	// Add the deploy command to the root command.
+	RootCmd.AddCommand(DeployCmd)
 }
