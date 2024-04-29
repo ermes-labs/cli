@@ -37,5 +37,5 @@ directory from the root of the repo, if it exists (The default repo is https://g
 
 func init() {
 	// Add the template pull command to the template command.
-	RootCmd.AddCommand(TemplatePullCmd)
+	TemplateCmd.AddCommand(TemplatePullCmd)
 }
